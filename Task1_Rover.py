@@ -2,8 +2,11 @@
 class rovar:
 
     def __init__(self) -> None:
-        self._LOWER_CONSTANTS = "bcdfhjklmnpqrstvwxz"
-        self._UPPER_CONSTANTS = "BCFGHJKLMNPQRSTVWXZ"
+        #“g” was missing from the lower consonants
+        self._LOWER_CONSTANTS = "bcdfghjklmnpqrstvwxz"
+        
+        #“D” was missing from the upper consonants
+        self._UPPER_CONSTANTS = "BCDFGHJKLMNPQRSTVWXZ"
  
     def enrove(self, normal: str)-> str:
         '''
@@ -38,11 +41,12 @@ class rovar:
             return None
        
         for c in self._LOWER_CONSTANTS:
+            # “o” must be lower case
             find = c+'o'+c
             rov = rov.replace(find, c)
        
         for c in self._UPPER_CONSTANTS:
-            find = c+'O'+c
+            find = c+'o'+c
             rov = rov.replace(find, c)
  
         return rov
