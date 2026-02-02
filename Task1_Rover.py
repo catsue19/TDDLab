@@ -41,11 +41,11 @@ class rovar:
             return None
        
         for c in self._LOWER_CONSTANTS:
-            # “o” must be lower case
             find = c+'o'+c
             rov = rov.replace(find, c)
        
         for c in self._UPPER_CONSTANTS:
+            # “o” must be lower case
             find = c+'o'+c
             rov = rov.replace(find, c)
  
