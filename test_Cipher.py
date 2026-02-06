@@ -44,7 +44,7 @@ class test_string(unittest.TestCase):
         # Need to check distinct rules as well as cases where multiple rules could apply to the same word
 
     # - uppercase
-    def test_cipher_large_palidrome(self):
+    def test_cipher_large_palindrome(self):
         self.assertEqual(self.cp.pattern_cipher('LEVEL'), 'LEVEL')
 
     def test_cipher_large_repeated(self):
@@ -54,7 +54,7 @@ class test_string(unittest.TestCase):
         self.assertEqual(self.cp.pattern_cipher('CAT'), 'ATC')
         
     # - lowercase
-    def test_cipher_small_palidrome(self):
+    def test_cipher_small_palindrome(self):
         self.assertEqual(self.cp.pattern_cipher('level'), 'level')
 
     def test_cipher_small_repeated(self):
@@ -69,7 +69,7 @@ class test_string(unittest.TestCase):
         self.assertEqual(self.cp.pattern_cipher('a'), 'a')
     
     # - two letter
-    def test_cipher_single_letter(self):
+    def test_cipher_double_letter(self):
         self.assertEqual(self.cp.pattern_cipher('Bä'), 'äB')
 
     # - multi-rule case (palidrome + repeated letter)
