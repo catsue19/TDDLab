@@ -23,7 +23,7 @@ class cipher:
             if char in self.LETTERS:
 
                 # palindrome case -> leave unchanged
-                if normal == normal[::-1]:
+                if normal.lower() == normal.lower()[::-1]:
                     ciphered_word = normal
 
                 # repeated letter case -> reverse the word

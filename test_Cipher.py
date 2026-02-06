@@ -74,7 +74,7 @@ class test_string(unittest.TestCase):
 
     # - multi-rule case (palidrome + repeated letter)
     def test_cipher_multi(self):
-        self.assertEqual(self.cp.pattern_cipher('noon'), 'noon')
+        self.assertEqual(self.cp.pattern_cipher('Noon'), 'Noon')
 
     # ADDITIONAL RULES 
     # - null input
