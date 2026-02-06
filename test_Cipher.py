@@ -70,7 +70,7 @@ class test_string(unittest.TestCase):
     
     # - two letter
     def test_cipher_single_letter(self):
-        self.assertEqual(self.cp.pattern_cipher('Bä'), 'Bä')
+        self.assertEqual(self.cp.pattern_cipher('Bä'), 'äB')
 
     # - multi-rule case (palidrome + repeated letter)
     def test_cipher_multi(self):
@@ -95,8 +95,10 @@ class test_string(unittest.TestCase):
 
     # - original casing is preserved
     def test_cipher_casing_preserved(self):
-        self.asserrEqual(self.cp.pattern_cipher('Python'), 'ythonP')
-
+        self.assertEqual(self.cp.pattern_cipher('Python'), 'ythonP')
+    
+    def test_cipher_casing_preserved_repeated(self):
+        self.assertEqual(self.cp.pattern_cipher('Puppy'), 'yppuP')
 
 if __name__ == '__main__':
     print("***********START OF All TEST CASES RESULTS SHOWN BELOW**************")

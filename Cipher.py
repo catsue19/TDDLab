@@ -15,20 +15,35 @@ class cipher:
         if normal is None:
             return None
 
-        encoded = []
+        ciphered_word = normal
+        string_list = []
+        
         for char in normal:
             # only alphabetic words are transformed
             if char in self.LETTERS:
-                 # palindrome case -> leave unchanged
+
+                # palindrome case -> leave unchanged
                 if normal == normal[::-1]:
-                    encoded.append(char)
+                    ciphered_word = normal
+
                 # repeated letter case -> reverse the word
+                elif self.has_duplicates(normal.lower()):
+                    ciphered_word = normal[::-1]
+                    
+                # if not duplicate letters, all letters must be unique case -> rotate left by one char
+                else: 
+                    ciphered_word = normal[1:] + normal[:1]
 
-                # unique letter case -> rotate the word left by one character
-
-            # number, special characters/punctuation remain unchanged
+            # numbers, special characters, and punctuation remain unchanged
             else:
-                encoded.append(char)
-        return ''.join(encoded)
-
-    
+                string_list.append(char)
+                ciphered_word = ''.join(string_list)
+                
+        return ciphered_word
+        
+    def has_duplicates(self, string):
+        for i in range(0, len(string)): 
+            for j in range(i+1, len(string)):
+                if (string[i] == string[j]): 
+                    # the character is a duplicate
+                    return True
