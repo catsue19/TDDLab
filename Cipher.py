@@ -27,6 +27,7 @@ class cipher:
                     ciphered_word = normal
 
                 # repeated letter case -> reverse the word
+                # check duplicate letters case insensitive
                 elif self.has_duplicates(normal.lower()):
                     ciphered_word = normal[::-1]
                     

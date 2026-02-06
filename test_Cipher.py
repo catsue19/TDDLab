@@ -69,7 +69,7 @@ class test_string(unittest.TestCase):
         self.assertEqual(self.cp.pattern_cipher('a'), 'a')
     
     # - two letter
-    def test_cipher_double_letter(self):
+    def test_cipher_two_letters(self):
         self.assertEqual(self.cp.pattern_cipher('Bä'), 'äB')
 
     # - multi-rule case (palidrome + repeated letter)
